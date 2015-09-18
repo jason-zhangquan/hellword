@@ -1,0 +1,78 @@
+package com.qizhu.model.clickButton;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+/**
+ * 对每个模块里的按钮，点击次数的统计
+ * @author Administrator
+ *
+ */
+@Entity
+@Table(name = "DATA_CLICKBUTTON")
+public class ClickButton {
+	@Id
+	@GeneratedValue(generator = "uuid")
+	@GenericGenerator(name = "uuid", strategy = "uuid")
+	@Column(name = "", length = 36)
+	private String cbId;
+	
+	@Column(name = "modulesName", length = 200)
+	private String modulesName;//模块名
+	
+	@Column(name = "buttonId", length = 200)
+	private String buttonId;
+	
+	@Column(name = "buttonName", length = 36)
+	private String buttonName;
+	
+	@Column(name = "clickNumber")
+	private int clickNumber;//点击数
+
+	public String getCbId() {
+		return cbId;
+	}
+
+	public void setCbId(String cbId) {
+		this.cbId = cbId;
+	}
+
+	public String getModulesName() {
+		return modulesName;
+	}
+
+	public void setModulesName(String modulesName) {
+		this.modulesName = modulesName;
+	}
+
+	public String getButtonId() {
+		return buttonId;
+	}
+
+	public void setButtonId(String buttonId) {
+		this.buttonId = buttonId;
+	}
+
+	public String getButtonName() {
+		return buttonName;
+	}
+
+	public void setButtonName(String buttonName) {
+		this.buttonName = buttonName;
+	}
+
+	public int getClickNumber() {
+		return clickNumber;
+	}
+
+	public void setClickNumber(int clickNumber) {
+		this.clickNumber = clickNumber;
+	}
+	
+	
+}

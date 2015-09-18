@@ -1,0 +1,8 @@
+package com.qizhu.dao.clickButton;
+
+import com.qizhu.dao.base.IBaseDao;
+import com.qizhu.model.clickButton.ClickButton;
+//IBaseDao基类接口，接收泛型。传ClickButton  com.qizhu.model名称
+public interface IClickButtonDao extends IBaseDao<ClickButton, String>{
+	
+}

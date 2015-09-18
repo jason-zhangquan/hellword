@@ -1,0 +1,11 @@
+package com.qizhu.dao.clickButton;
+
+import org.springframework.stereotype.Repository;
+
+import com.qizhu.dao.base.BaseDaoImpl;
+import com.qizhu.model.clickButton.ClickButton;
+@Repository("clickButtonDao")
+public class ClickButtonDaoImpl  extends BaseDaoImpl<ClickButton, String> implements IClickButtonDao {
+
+	
+}

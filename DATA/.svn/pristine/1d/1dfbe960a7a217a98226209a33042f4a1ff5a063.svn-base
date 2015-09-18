@@ -1,0 +1,101 @@
+package com.qizhu.model.statistics;
+
+import java.sql.Timestamp;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
+/**
+ * 对客户端点击次数的统计
+ * @author Administrator
+ *
+ */
+@Entity
+@Table(name = "DATA_STATISTICS")
+public class Statistics {//统计点击
+	
+	@Id
+	@GeneratedValue(generator = "uuid")
+	@GenericGenerator(name = "uuid", strategy = "uuid")
+	@Column(name = "statisticsId", length = 36)
+	private String statisticsId;//id	
+	
+	@Column(name = "telephoneType", length = 20)
+	private String telephoneType;//客户端类型
+	
+	@Column(name = "versionVal", length=20)
+	private String versionVal;//版本值12
+	
+	@Column(name = "version", length=20)
+	private String version;//版本号
+	
+	@Column(name = "userId", length=20)
+	private String userId;//用户id
+	
+	@Column(name = "accessTime", length=30)
+	private Date accessTime;//用户访问时间
+	
+	private int type;//页面类型，1为跳转页面，2为按钮，3为分享
+	
+	
+	
+	
+	
+
+	//get  set
+	public String getStatisticsId() {
+		return statisticsId;
+	}
+
+	public void setStatisticsId(String statisticsId) {
+		this.statisticsId = statisticsId;
+	}
+
+	public String getTelephoneType() {
+		return telephoneType;
+	}
+
+	public void setTelephoneType(String telephoneType) {
+		this.telephoneType = telephoneType;
+	}
+
+	public String getVersionVal() {
+		return versionVal;
+	}
+
+	public void setVersionVal(String versionVal) {
+		this.versionVal = versionVal;
+	}
+
+	public String getVersion() {
+		return version;
+	}
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public Date getAccessTime() {
+		return accessTime;
+	}
+
+	public void setAccessTime(Date accessTime) {
+		this.accessTime = accessTime;
+	}
+
+
+}

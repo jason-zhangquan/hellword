@@ -1,0 +1,9 @@
+package com.qizhu.service.clickButton;
+
+import com.qizhu.model.clickButton.ClickButton;
+import com.qizhu.model.statistics.Statistics;
+import com.qizhu.service.base.IBaseService;
+
+public interface IClickButtonService extends IBaseService<ClickButton, String>{
+
+}

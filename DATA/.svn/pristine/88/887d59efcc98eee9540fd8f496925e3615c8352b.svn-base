@@ -1,0 +1,30 @@
+package com.qizhu.service.clickButton;
+
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.qizhu.dao.base.IBaseDao;
+import com.qizhu.dao.clickButton.ClickButtonDaoImpl;
+import com.qizhu.dao.clickButton.IClickButtonDao;
+import com.qizhu.model.clickButton.ClickButton;
+import com.qizhu.service.base.BaseServiceImpl;
+import com.sun.org.apache.bcel.internal.generic.NEW;
+
+//继承基类，实现自己接口
+@Service("clickButtonService")
+public class ClickButtonServiceImpl extends BaseServiceImpl<ClickButton, String> implements IClickButtonService{
+	/**
+	 * 注入自己的dao
+	 */
+	@Autowired
+	private IClickButtonDao clickButtonDao;
+
+	@Autowired
+	public void setBaseDao(IBaseDao<ClickButton, String> baseDao) {
+		super.setBaseDao(baseDao);
+	}
+	
+	
+	
+}

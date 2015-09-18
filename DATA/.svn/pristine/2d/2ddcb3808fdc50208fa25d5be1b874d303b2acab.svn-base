@@ -1,0 +1,65 @@
+package com.qizhu.controller.statistics;
+
+import java.sql.Timestamp;
+import java.util.Date;
+
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.qizhu.custom.JsonView;
+import com.qizhu.model.statistics.Statistics;
+import com.qizhu.service.statistics.IStatisticsService;
+
+/**
+ * 
+ * 统计Controller
+ * @author Administrator
+ *
+ */
+@Controller
+@RequestMapping("/statistics")
+public class StatisticsController {
+	
+	@Autowired
+	private IStatisticsService statisticsService;
+
+	/**
+	 * 点击按钮，保存信息
+	 * http://localhost:8080/DATA/statistics/statistics?userId=2&telephoneStyle=android&version=1.6.0&type=1&subType=2
+	 */
+	@RequestMapping("/statistics")
+	public ModelAndView statistics(Statistics statistics,HttpServletResponse response
+//			@RequestParam(value = "telephoneStyle", required = false) String telephoneStyle,
+//			@RequestParam(value = "version", required = false) String version,
+//			@RequestParam(value = "userId", required = false) String userId,
+//			@RequestParam(value = "type", required = false) String type,
+//			@RequestParam(value = "subType", required = false) String subType
+			){
+			statistics.setClickTime(new Timestamp(new Date().getTime()));
+			statisticsService.save(statistics);
+			
+			
+			return JsonView.render(statistics, response);
+	}
+	
+	//页面分析
+	@RequestMapping("/pageAnalysis")
+	public String pageAnalysis(){
+		return "statistics/pageAnalysis";
+	}
+	//按钮
+	@RequestMapping("/button")
+	public String button(){
+		return "statistics/button";
+	}
+	//分享
+	@RequestMapping("/sharePage")
+	public String sharePage(){
+		return "statistics/sharePage";
+	}
+}

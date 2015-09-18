@@ -1,0 +1,20 @@
+package com.qizhu.controller.clickButton;
+
+import org.springframework.stereotype.Controller;
+
+/**
+ * 
+ * 点击按钮的Controller
+ * @author Administrator
+ *
+ */
+@Controller
+public class ClickButtonController {
+
+	/**
+	 * 点击按钮，保存信息
+	 */
+	public void clickButton(){
+		
+	}
+}
