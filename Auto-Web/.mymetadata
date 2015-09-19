@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="Auto-Web"
+  id="myeclipse.1442337393720"
+  context-root="/Auto-Web-core"
+  j2ee-spec="6.0"
+  archive="Auto-Web.war">
+  <attributes>
+    <attribute name="webrootdir" value="src/main/webapp" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,62 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.qizhu</groupId>
+	<artifactId>Auto-Web-core</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name />
+	<description />
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<build>
+		<finalName>Auto-Web</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.cargo</groupId>
+				<artifactId>cargo-maven2-plugin</artifactId>
+				<version>1.4.0</version>
+				<configuration>
+					<container>
+						<containerId>tomcat7x</containerId>
+						<type>remote</type>
+					</container>
+					<configuration>
+						<type>runtime</type>
+						<properties>
+							<cargo.remote.uri>http://115.28.82.242:8080/manager/text</cargo.remote.uri>
+							<cargo.remote.username>admin</cargo.remote.username>
+							<cargo.remote.password>123!@#asd</cargo.remote.password>
+						</properties>
+					</configuration>
+					<deployables>
+						<deployable>
+							<groupId>com.qizhu</groupId>
+							<artifactId>Auto-Web-core</artifactId>
+							<type>war</type>
+							<properties>
+								<context>/${project.artifactId}</context>
+							</properties>
+							<!-- 可选：验证是否部署成功 -->
+							<pingURL>http://115.28.82.242:8080/Auto-Web</pingURL>
+							<!-- 可选：验证超时时间，默认是120000 毫秒 -->
+							<pingTimeout>60000000</pingTimeout>
+						</deployable>
+					</deployables>
+				</configuration>
+
+			</plugin>
+		</plugins>
+	</build>
+</project>
