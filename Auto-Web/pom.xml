@@ -48,7 +48,7 @@
 							<properties>
 								<context>/${project.artifactId}</context>
 							</properties>
-							<!-- 可选：验证是否部署成功 -->
+							<!-- 可选：验证是否部署成功怎么验证是否部署成功 -->
 							<pingURL>http://115.28.82.242:8080/Auto-Web</pingURL>
 							<!-- 可选：验证超时时间，默认是120000 毫秒 -->
 							<pingTimeout>60000000</pingTimeout>
